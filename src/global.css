@@ -21,7 +21,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10rem;
 }
 
 /*removing default border styling on hamburger nav icon upon a click or focus event */
