@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Card from "../components/Card";
 
 const Movies = () => {
   const [movieData, setMovieData] = useState([]);
@@ -27,39 +28,24 @@ const Movies = () => {
   return (
     <>
       <h1>Most popular movies</h1>
-      {movieData.map((movie) => (
-        <div key={movie.id}>
-          <img
-            /*Appending poster path of each image with its base URL from the configuration files.
+      <div className="grid-layout">
+        {movieData.map((movie) => {
+          return (
+            <Card
+              key={movie.id}
+              /*Appending poster path of each image with its base URL from the configuration files.
             This is done to create a fully working image file path.*/
-            src={imageUrl.concat("w500", movie.poster_path)}
-            alt="poster"
-            style={{ display: "block", margin: "auto" }}
-          />
-          <h1>{movie.title}</h1>
-          <h2
-            style={{
-              color: "white",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            Summary
-          </h2>
-          <p style={{ color: "white" }}>{movie.overview}</p>
-          <p
-            style={{
-              color: "white",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {movie.release_date}
-          </p>
-        </div>
-      ))}
+              imgSrc={imageUrl.concat("w500", movie.poster_path)}
+              alt="movie poster"
+              imgStyle={{
+                width: "100%",
+                height: "auto",
+              }}
+              title={movie.title}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };
