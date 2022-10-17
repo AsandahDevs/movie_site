@@ -1,6 +1,6 @@
 # A Movie website
 
-This website serves the purpose of showcasing the latest trending movies by utilising IMDb's api to fetch data from their database and display it onto the client interface.
+This website serves the purpose of showcasing the latest trending movies by utilising TMDB's api to fetch data from their database and display it onto the client interface using react.js to render the user interface.Data is updated on a daily basis.
 
 ## Tech stack utilized for this site
 
