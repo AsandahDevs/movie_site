@@ -37,3 +37,14 @@ h1 {
 button.navbar-toggler {
   border: none;
 }
+
+figcaption > h1 {
+  color: white;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 10px;
+  justify-content: center;
+}
