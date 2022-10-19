@@ -48,3 +48,13 @@ figcaption > h1 {
   grid-gap: 10px;
   justify-content: center;
 }
+
+p {
+  color: white;
+}
+
+div.spinner-grow {
+  display: block;
+  margin: auto;
+  color: white;
+}
