@@ -1,33 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Card from "../components/Card";
 import useFetch from "../hooks/useFetch";
+import useImageFiles from "../hooks/useImageFiles";
 import Form from "react-bootstrap/Form";
-import { Pagination } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 
 const Movies = () => {
-  const [imageUrl, setImageUrl] = useState("");
   const [movieName, setMovieName] = useState("");
 
-  // using a custom hook to fetch movie data.
-  const movies = useFetch(
+  /* using a custom hook to fetch movie data.Please note this hook returns an object with two properties,
+  'info'(which is an array of data), and 'loadingStatus' (which is a boolean value).*/
+  const { info, loadingStatus } = useFetch(
     "https://api.themoviedb.org/3/movie/popular?api_key=73585424b9d1198974dbb05a54c359df&language=en-US&page=1"
   );
 
-  //fetching configuration files containing base image URLs
-  useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/configuration?api_key=73585424b9d1198974dbb05a54c359df"
-    )
-      .then((response) => response.json())
-      .then((data) => setImageUrl(data.images.secure_base_url))
-      .catch((error) => console.log(error.message));
-  }, []);
+  // using a custom hook to fetch the base image URL for movie posters from  TMBD's image configuration files.
+  const imageURL = useImageFiles();
 
   const captureMovieTitle = (e) => {
     setMovieName(e.target.value);
   };
 
-  const filteredMovies = movies.filter((movie) => {
+  const filteredMovies = info.filter((movie) => {
     return movie.title.toLowerCase().includes(movieName.toLowerCase());
   });
 
@@ -43,8 +37,12 @@ const Movies = () => {
       />
       <br />
       <div className="grid-layout">
-        {filteredMovies.length === 0 ? (
-          <p style={{ color: "white" }}>no matches found</p>
+        {loadingStatus ? (
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : filteredMovies.length === 0 ? (
+          <p>no matches found</p>
         ) : (
           filteredMovies.map((movie) => {
             return (
@@ -52,7 +50,7 @@ const Movies = () => {
                 key={movie.id}
                 /*Appending poster path of each image with its base URL from the configuration files.
             This is done to create a fully working image file path.*/
-                imgSrc={imageUrl.concat("w500", movie.poster_path)}
+                imgSrc={imageURL.concat("w500", movie.poster_path)}
                 alt={movie.title}
                 imgStyle={{
                   width: "100%",
@@ -64,20 +62,29 @@ const Movies = () => {
           })
         )}
       </div>
-      <Pagination style={{ display: "flex", justifyContent: "center" }}>
-        <Pagination.Prev id="prev">&laquo;</Pagination.Prev>
-        <Pagination.Item active>{1}</Pagination.Item>
-        <Pagination.Item>{2}</Pagination.Item>
-        <Pagination.Item>{3}</Pagination.Item>
-        <Pagination.Item>{4}</Pagination.Item>
-        <Pagination.Item>{5}</Pagination.Item>
-        <Pagination.Item>{6}</Pagination.Item>
-        <Pagination.Item>{7}</Pagination.Item>
-        <Pagination.Item>{8}</Pagination.Item>
-        <Pagination.Item>{9}</Pagination.Item>
-        <Pagination.Item>{10}</Pagination.Item>
-        <Pagination.Next id="next">&raquo;</Pagination.Next>
-      </Pagination>
+      <br />
+      <nav aria-label="Page navigation ">
+        <ul
+          className="pagination"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <li className="page-item active">
+            <a className="page-link" href="/movies">
+              1
+            </a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" href="/movies/page2">
+              2
+            </a>
+          </li>
+          <li className="page-item">
+            <a className="page-link" href="/movies/page3">
+              3
+            </a>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
