@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "../components/Card";
 import useFetch from "../hooks/useFetch";
 import Form from "react-bootstrap/Form";
+import { Pagination } from "react-bootstrap";
 
 const Movies = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -63,6 +64,20 @@ const Movies = () => {
           })
         )}
       </div>
+      <Pagination style={{ display: "flex", justifyContent: "center" }}>
+        <Pagination.Prev id="prev">&laquo;</Pagination.Prev>
+        <Pagination.Item active>{1}</Pagination.Item>
+        <Pagination.Item>{2}</Pagination.Item>
+        <Pagination.Item>{3}</Pagination.Item>
+        <Pagination.Item>{4}</Pagination.Item>
+        <Pagination.Item>{5}</Pagination.Item>
+        <Pagination.Item>{6}</Pagination.Item>
+        <Pagination.Item>{7}</Pagination.Item>
+        <Pagination.Item>{8}</Pagination.Item>
+        <Pagination.Item>{9}</Pagination.Item>
+        <Pagination.Item>{10}</Pagination.Item>
+        <Pagination.Next id="next">&raquo;</Pagination.Next>
+      </Pagination>
     </>
   );
 };
