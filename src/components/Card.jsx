@@ -9,7 +9,18 @@ const Card = (props) => {
       >
         <img src={props.imgSrc} alt={props.alt} style={props.imgStyle} />
         <figcaption>
-          <h1 style={{ fontSize: "large" }}>{props.title}</h1>
+          <h1 style={{ fontSize: "medium", fontWeight: "bold", color: "pink" }}>
+            Release date: {props.releaseYear}
+          </h1>
+          <h2
+            style={{
+              fontSize: "large",
+              fontWeight: "bold",
+              color: "white",
+            }}
+          >
+            {props.title}
+          </h2>
         </figcaption>
       </figure>
     </>
