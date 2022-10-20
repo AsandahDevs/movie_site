@@ -10,7 +10,7 @@ const Movies = () => {
 
   /* using a custom hook to fetch movie data.Please note this hook returns an object with two properties,
   'info'(which is an array of data), and 'loadingStatus' (which is a boolean value).*/
-  const { info, loadingStatus } = useFetch(
+  const { info, loadingStatus, errorMessage, errorState } = useFetch(
     "https://api.themoviedb.org/3/movie/popular?api_key=73585424b9d1198974dbb05a54c359df&language=en-US&page=1"
   );
 
@@ -56,12 +56,31 @@ const Movies = () => {
                   width: "100%",
                   height: "auto",
                 }}
+                releaseYear={movie.release_date}
                 title={movie.title}
               />
             );
           })
         )}
       </div>
+      <br />
+      {errorState ? (
+        <div
+          className="card text-white bg-danger mb-3"
+          style={{ width: "500px", display: "block", margin: "auto" }}
+        >
+          <div className="card-body">
+            <h1 style={{ fontSize: "medium" }}>ERR_INTERNET_DISCONNECTED !</h1>
+            <p className="card-text">
+              {errorMessage} required data from our servers due to a possible
+              poor internet connection.Reconnect to your network provider and
+              try again.
+            </p>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <br />
       <nav aria-label="Page navigation ">
         <ul
@@ -81,6 +100,11 @@ const Movies = () => {
           <li className="page-item">
             <a className="page-link" href="/movies/page3">
               3
+            </a>
+          </li>
+          <li className="page-item ">
+            <a className="page-link " href="/movies/page4">
+              4
             </a>
           </li>
         </ul>
