@@ -38,8 +38,11 @@ button.navbar-toggler {
   border: none;
 }
 
-figcaption > h1 {
+figcaption > h1,
+h2 {
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .grid-layout {
@@ -54,6 +57,11 @@ p {
 }
 
 div.spinner-grow {
+  display: block;
+  margin: auto;
+  color: white;
+}
+div.spinner-border {
   display: block;
   margin: auto;
   color: white;
