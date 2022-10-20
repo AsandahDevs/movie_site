@@ -55,11 +55,6 @@ p {
   color: white;
 }
 
-div.spinner-grow {
-  display: block;
-  margin: auto;
-  color: white;
-}
 div.spinner-border {
   display: block;
   margin: auto;
