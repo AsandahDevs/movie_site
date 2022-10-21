@@ -56,6 +56,7 @@ const MoviePage2 = () => {
                   width: "100%",
                   height: "auto",
                 }}
+                releaseYear={movie.release_date}
                 title={movie.title}
               />
             );
