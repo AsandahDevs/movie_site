@@ -4,7 +4,11 @@ This website serves the purpose of showcasing the latest trending movies by util
 
 ## Tech stack utilized for this site
 
-* HTML
-* Bootstrap v5 ( CSS Framework)
-* JavaScript
-* React.js
+* `HTML`
+* `Bootstrap v5 ( CSS Framework)`
+* `JavaScript`
+* `React.js`
+
+## Preview
+
+<img src=https://user-images.githubusercontent.com/89397749/197245679-23e170ce-ec14-45df-9f2a-e55e7bd23aa3.png alt="preview" width="600px" height="400px" />
