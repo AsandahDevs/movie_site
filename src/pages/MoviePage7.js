@@ -70,52 +70,82 @@ const MoviePage7 = () => {
           style={{ display: "flex", justifyContent: "center" }}
         >
           <li className="page-item ">
-            <a className="page-link" href="/movie_site/movies">
+            <a
+              className="page-link"
+              href="https://asandahdevs.github.io/movie_site/movies"
+            >
               1
             </a>
           </li>
           <li className="page-item">
-            <a className="page-link" href="/movie_site/movies/page2">
+            <a
+              className="page-link"
+              href="https://asandahdevs.github.io/movie_site/movies/page2"
+            >
               2
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movie_site/movies/page3">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page3"
+            >
               3
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movie_site/movies/page4">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page4"
+            >
               4
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movie_site/movies/page5">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page5"
+            >
               5
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movie_site/movies/page6">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page6"
+            >
               6
             </a>
           </li>
-          <li className="page-item active">
-            <a className="page-link " href="/movie_site/movies/page7">
+          <li className="page-item active ">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page7"
+            >
               7
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movie_site/movies/page8">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page8"
+            >
               8
             </a>
           </li>
           <li className="page-item">
-            <a className="page-link " href="/movie_site/movies/page9">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page9"
+            >
               9
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movie_site/movies/page10">
+            <a
+              className="page-link "
+              href="https://asandahdevs.github.io/movie_site/movies/page10"
+            >
               10
             </a>
           </li>
