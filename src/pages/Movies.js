@@ -83,6 +83,11 @@ const Movies = () => {
               3
             </a>
           </li>
+          <li className="page-item ">
+            <a className="page-link " href="/movies/page3">
+              4
+            </a>
+          </li>
         </ul>
       </nav>
     </>
