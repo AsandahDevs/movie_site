@@ -14,7 +14,10 @@ const Error = () => {
         Page not found !
       </h2>
       <Button style={{ display: "block", margin: "auto" }} variant="secondary">
-        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+        <Link
+          to="/movie_site/"
+          style={{ textDecoration: "none", color: "white" }}
+        >
           Go back home
         </Link>
       </Button>
