@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card";
 import useFetch from "../hooks/useFetch";
-import useImageFiles from "../hooks/useImageFiles";
 import Form from "react-bootstrap/Form";
 import { Spinner } from "react-bootstrap";
 
@@ -13,9 +12,6 @@ const MoviePage9 = () => {
   const { info, loadingStatus } = useFetch(
     "https://api.themoviedb.org/3/movie/popular?api_key=73585424b9d1198974dbb05a54c359df&language=en-US&page=9"
   );
-
-  // using a custom hook to fetch the base image URL for movie posters from  TMBD's image configuration files.
-  const imageURL = useImageFiles();
 
   const captureMovieTitle = (e) => {
     setMovieName(e.target.value);
@@ -50,7 +46,10 @@ const MoviePage9 = () => {
                 key={movie.id}
                 /*Appending poster path of each image with its base URL from the configuration files.
             This is done to create a fully working image file path.*/
-                imgSrc={imageURL.concat("w500", movie.poster_path)}
+                imgSrc={"https://image.tmdb.org/t/p/".concat(
+                  "w500",
+                  movie.poster_path
+                )}
                 alt={movie.title}
                 imgStyle={{
                   width: "100%",

@@ -1,6 +1,5 @@
 import Card from "../components/Card";
 import useFetch from "../hooks/useFetch";
-import useImageFiles from "../hooks/useImageFiles";
 import Spinner from "react-bootstrap/Spinner";
 
 const Home = () => {
@@ -9,9 +8,6 @@ const Home = () => {
   const { info, loadingStatus } = useFetch(
     "https://api.themoviedb.org/3/trending/movie//week?api_key=73585424b9d1198974dbb05a54c359df&language=en-US"
   );
-
-  // using a custom hook to fetch the base image URL for movie posters from  TMBD's image configuration files.
-  const imageURL = useImageFiles();
 
   return (
     <>
@@ -31,7 +27,10 @@ const Home = () => {
                 key={movie.id}
                 /*Appending poster path of each image with its base URL from the configuration files.
             This is done to create a fully working image file path.*/
-                imgSrc={imageURL.concat("w500", movie.poster_path)}
+                imgSrc={"https://image.tmdb.org/t/p/".concat(
+                  "w500",
+                  movie.poster_path
+                )}
                 alt={movie.title}
                 imgStyle={{
                   width: "100%",
