@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/sharedLayout";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
@@ -15,7 +15,7 @@ import Error from "./pages/Error";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/movie_site/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -32,7 +32,7 @@ function App() {
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
