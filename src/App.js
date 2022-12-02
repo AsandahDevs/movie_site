@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Layout from "./pages/sharedLayout";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
@@ -17,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/movie_site/" element={<Layout />}>
+        <Route exact path="/movie_site/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="movies" element={<Movies />} />
           <Route path="movies/page2" element={<MoviePage2 />} />
