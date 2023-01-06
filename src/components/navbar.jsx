@@ -9,7 +9,7 @@ function NavMenu() {
       <Container fluid>
         <Navbar.Brand href="#">
           <img
-            src={"https://asandahdevs.github.io/Assets/film_reel.png"}
+            src={"https://dreampalace.netlify.app/Assets/film_reel.png"}
             alt="movie reel"
             height="35"
           />
