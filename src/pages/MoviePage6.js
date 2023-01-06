@@ -74,47 +74,47 @@ const MoviePage6 = () => {
             </a>
           </li>
           <li className="page-item">
-            <a className="page-link" href="/movies/page2">
+            <a className="page-link" href="/#/movies/page2">
               2
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movies/page3">
+            <a className="page-link " href="/#/movies/page3">
               3
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movies/page4">
+            <a className="page-link " href="/#/movies/page4">
               4
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movies/page5">
+            <a className="page-link " href="/#/movies/page5">
               5
             </a>
           </li>
           <li className="page-item active">
-            <a className="page-link " href="/movies/page6">
+            <a className="page-link " href="/#/movies/page6">
               6
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movies/page7">
+            <a className="page-link " href="/#/movies/page7">
               7
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movies/page8">
+            <a className="page-link " href="/#/movies/page8">
               8
             </a>
           </li>
           <li className="page-item">
-            <a className="page-link " href="/movies/page9">
+            <a className="page-link " href="/#/movies/page9">
               9
             </a>
           </li>
           <li className="page-item ">
-            <a className="page-link " href="/movies/page10">
+            <a className="page-link " href="/#/movies/page10">
               10
             </a>
           </li>
