@@ -19,7 +19,7 @@ function NavMenu() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/movie_site/">
+            <Nav.Link as={NavLink} to="/">
               Home
             </Nav.Link>
             <Nav.Link as={NavLink} to="movies">
