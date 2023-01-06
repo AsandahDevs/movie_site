@@ -9,9 +9,7 @@ function NavMenu() {
       <Container fluid>
         <Navbar.Brand href="#">
           <img
-            src={
-              "https://asandahdevs.github.io/movie_site/Assets/film_reel.png"
-            }
+            src={"https://asandahdevs.github.io/Assets/film_reel.png"}
             alt="movie reel"
             height="35"
           />
