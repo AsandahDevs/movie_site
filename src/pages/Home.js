@@ -6,7 +6,7 @@ const Home = () => {
   /* using a custom hook to fetch movie data.Please note this hook returns an object with two properties,
   'info'(which is an array of data), and 'loadingStatus' (which is a boolean value).*/
   const { info, loadingStatus } = useFetch(
-    "https://api.themoviedb.org/3/trending/movie//week?api_key=73585424b9d1198974dbb05a54c359df&language=en-US"
+    "https://api.themoviedb.org/3/trending/movie/week?api_key=73585424b9d1198974dbb05a54c359df&language=en-US"
   );
 
   return (
